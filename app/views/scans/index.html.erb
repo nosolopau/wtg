@@ -1,0 +1,24 @@
+<h1>Listing scans</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Gem list</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @scans.each do |scan| %>
+      <tr>
+        <td><%= link_to 'Show', scan %></td>
+        <td><%= link_to 'Edit', edit_scan_path(scan) %></td>
+        <td><%= link_to 'Destroy', scan, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Scan', new_scan_path %>

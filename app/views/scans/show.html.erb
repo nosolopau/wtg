@@ -1,0 +1,10 @@
+<p>
+  <strong>Gemfile:</strong>
+    <pre><%= @scan.gemfile %></pre>
+</p>
+
+<h2>Dependencies</h2>
+<%= render partial: @scan.dependencies %>
+
+<%= link_to 'Edit', edit_scan_path(@scan) %> |
+<%= link_to 'Back', scans_path %>
