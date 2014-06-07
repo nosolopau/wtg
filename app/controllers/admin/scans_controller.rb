@@ -1,4 +1,4 @@
-class ScansController < ApplicationController
+class Admin::ScansController < ApplicationController
   before_action :set_scan, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_admin!
 

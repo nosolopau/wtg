@@ -1,8 +1,12 @@
 Rails.application.routes.draw do
-  get 'home/index'
-
   devise_for :admins
+
   resources :scans
+
+  namespace :admin do
+    resources :scans
+  end
+
   root :to => "home#index"
 
   # The priority is based upon order of creation: first created -> highest priority.
