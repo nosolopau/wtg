@@ -18,6 +18,8 @@ class ScansController < ApplicationController
 
     respond_to do |format|
       if @scan.save
+        @scan.delay_process_dependencies!
+
         format.html { redirect_to @scan, notice: 'Scan was successfully created.' }
         format.json { render :show, status: :created, location: @scan }
       else

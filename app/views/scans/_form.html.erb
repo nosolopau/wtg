@@ -1,14 +1,13 @@
-<%= form_for @scan, :html => { :class => 'form-horizontal' } do |f| %>
+<%= form_for @scan, html: { class: 'form-horizontal' } do |f| %>
   <div class="control-group">
-    <%= f.label :gemfile, :class => 'control-label' %>
+    <%= f.label :gemfile, class: 'control-label' %>
     <div class="controls">
-      <%= f.text_area :gemfile %>
+      <%= f.text_area :gemfile, class: 'field span12', rows: '20' %>
     </div>
   </div>
 
   <div class="form-actions">
-    <%= f.submit nil, :class => 'btn btn-primary' %>
-    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
-                scans_path, :class => 'btn' %>
+    <%= f.submit 'Create scan', :class => 'btn btn-primary' %>
+    <%= link_to 'Cancel', scans_path, :class => 'btn' %>
   </div>
 <% end %>

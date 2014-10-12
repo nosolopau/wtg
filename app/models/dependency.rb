@@ -17,8 +17,8 @@ class Dependency
 
   belongs_to :scan
 
-  def self.create_from_gemfile(gemfile)
-    Gemnasium::Parser.gemfile(gemfile).dependencies.map do |dependency|
+  def self.create_from_gemfile(dependencies)
+    dependencies.map do |dependency|
       new_dependency = self.create(groups: dependency.groups, source: dependency.source, kind: dependency.type, name: dependency.name, requirement: dependency.requirement)
       new_dependency.retrieve_and_set_details!
       new_dependency

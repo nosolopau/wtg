@@ -41,7 +41,10 @@ gem 'spring',        group: :development
 gem 'gems'
 gem 'gemnasium-parser'
 gem 'devise', '>= 3.2.4'
+gem 'pretends_like_state_machine', '~> 0.0.1'
+gem 'delayed_job_mongoid', github: 'nosolopau/delayed_job_mongoid'
+gem 'daemons'
 
-gem "therubyracer"
-gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
-gem "twitter-bootstrap-rails"
+gem 'therubyracer'
+gem 'less-rails'
+gem 'twitter-bootstrap-rails'
