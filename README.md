@@ -1,6 +1,7 @@
-# WTG? - What the gem?
+# WTG!? 
+## What the gem!?
 
-**What the gem?** is a dependencies analyzer for applications with a Gemfile :).
+**WTG?** is a dependencies analyzer for applications with a Gemfile :).
 
 ## Setup
 
