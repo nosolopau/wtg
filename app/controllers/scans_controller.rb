@@ -1,5 +1,5 @@
 class ScansController < ApplicationController
-  before_action :set_scan, only: [:show]
+  before_action :set_scan, only: [:show, :reprocess]
 
   # GET /scans/1
   # GET /scans/1.json
@@ -26,6 +26,15 @@ class ScansController < ApplicationController
         format.html { render :new }
         format.json { render json: @scan.errors, status: :unprocessable_entity }
       end
+    end
+  end
+
+  def reprocess
+    @scan.reset!
+    @scan.delay_process_dependencies!
+
+    respond_to do |format|
+      format.html { redirect_to @scan, notice: 'Scan reprocessing was successfully started.' }
     end
   end
 

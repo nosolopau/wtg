@@ -17,18 +17,19 @@ class Dependency
 
   belongs_to :scan
 
-  def self.create_from_gemfile(dependencies)
-    dependencies.map do |dependency|
-      new_dependency = self.create(groups: dependency.groups, source: dependency.source, kind: dependency.type, name: dependency.name, requirement: dependency.requirement)
-      new_dependency.retrieve_and_set_details!
-      new_dependency
-    end
+  def self.create_from_gemfile(dependency)
+    new_dependency = self.create(groups: dependency.groups, source: dependency.source, kind: dependency.type, name: dependency.name, requirement: dependency.requirement)
+    new_dependency.retrieve_and_set_details!
+    new_dependency
   end
 
   def retrieve_and_set_details!
     gem_info = Gems.info(self.name)
 
-    self.licenses = gem_info['licenses'].join(',')
+    begin
+      self.licenses = gem_info['licenses'].join(',')
+    rescue
+    end
     self.info = gem_info['info']
     self.current_version = gem_info['version']
     self.project_uri = gem_info['project_uri']

@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
   devise_for :admins
 
-  resources :scans
+  resources :scans do
+    member do
+      get 'reprocess'
+    end
+  end
 
   namespace :admin do
     resources :scans

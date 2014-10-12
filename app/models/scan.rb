@@ -2,10 +2,11 @@ class Scan
   include Mongoid::Document
   include Mongoid::Timestamps
 
-  pretends_like_state_machine states: [:waiting, :processing, :finished]
+  pretends_like_state_machine states: [:waiting, :processing, :finished, :failed]
 
   field :gemfile, type: String
   field :dependencies_count, type: Integer
+  field :comments, type: String
 
   validates :gemfile, presence: true
 
@@ -16,10 +17,24 @@ class Scan
     delay.process_dependencies!
   end
 
+  def reset!
+    self.dependencies_count = nil
+    dependencies.delete_all
+  end
+
   def process_dependencies!
     processing!
-    self.dependencies = Dependency.create_from_gemfile(dependencies_from_gemfile)
-    finished!
+
+    begin
+      dependencies_from_gemfile.each do |dependency|
+        self.dependencies << Dependency.create_from_gemfile(dependency)
+      end
+    rescue => e
+      self.failed!
+      update_attribute(:comments, e.message + e.backtrace)
+    else
+      finished!
+    end
   end
 
   def progress

@@ -1,1 +1,1 @@
-json.extract! @scan, :id, :gem_list, :created_at, :updated_at
+json.extract! @scan, :id, :progress, :state, :comments, :created_at, :updated_at
