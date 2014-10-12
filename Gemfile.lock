@@ -68,8 +68,14 @@ GEM
       railties (>= 3.2.6, < 5)
       thread_safe (~> 0.1)
       warden (~> 1.2.3)
+    dotenv (0.11.1)
+      dotenv-deployment (~> 0.0.2)
+    dotenv-deployment (0.0.2)
     erubis (2.7.0)
     execjs (2.2.1)
+    foreman (0.71.0)
+      dotenv (~> 0.11.1)
+      thor (~> 0.19.1)
     gemnasium-parser (0.1.9)
     gems (0.8.3)
     hike (1.2.3)
@@ -177,6 +183,7 @@ DEPENDENCIES
   daemons
   delayed_job_mongoid!
   devise (>= 3.2.4)
+  foreman
   gemnasium-parser
   gems
   jbuilder (~> 2.0)

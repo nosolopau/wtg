@@ -8,10 +8,9 @@
 
 ## Running
 
-1. Run the rails application
-2. Launch the `delayed_job` process with:
+1. You can launch the application using `Foreman`:
 
-        bundle exec bin/delayed_job start
+    bundle exec foreman start
 
 ## License
 

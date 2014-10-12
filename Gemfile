@@ -5,6 +5,7 @@ gem 'rails', '4.1.0'
 
 gem 'mongoid', git: 'https://github.com/mongoid/mongoid.git'
 gem 'bson_ext'
+gem 'foreman'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
