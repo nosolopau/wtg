@@ -10,7 +10,7 @@
 
 1. You can launch the application using `Foreman`:
 
-    bundle exec foreman start
+        bundle exec foreman start
 
 ## License
 
