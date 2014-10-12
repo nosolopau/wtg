@@ -13,3 +13,6 @@
 
         bundle exec bin/delayed_job start
 
+## License
+
+MIT License. Copyright 2012-2014 [@nosolopau](https://twitter.com/nosolopau).
