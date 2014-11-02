@@ -50,6 +50,11 @@
       <ul class="nav navbar-nav">
         <li><%= link_to "New scan", new_scan_path  %></li>
       </ul>
+      <% if admin_signed_in? %>
+      <ul class="nav navbar-nav navbar-right">
+        <li><%= link_to('Logout', destroy_admin_session_path, method: :delete) %></li>
+      </ul>
+      <% end %>
     </div>
   </div>
 </div>

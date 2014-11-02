@@ -1,15 +1,16 @@
 Rails.application.routes.draw do
-  devise_for :admins
-
   resources :scans, only: [:new, :create, :show, :index] do
     member do
       get 'reprocess'
     end
   end
 
-  namespace :admin do
-    resources :scans
-  end
+  root to: 'home#index'
 
-  root :to => "home#index"
+  devise_for :admins
+
+  get '/admin', to: redirect('/admin/scans')
+  namespace :admin do
+    resources :scans,  only: [:show, :index, :destroy]
+  end
 end
