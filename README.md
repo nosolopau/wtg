@@ -9,9 +9,10 @@
 
 ## Running
 
-1. You can launch the application using `Foreman`:
 
-        bundle exec foreman start
+You can launch the application using `Foreman`:
+
+    bundle exec foreman start
 
 ## License
 
