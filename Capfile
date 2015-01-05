@@ -3,6 +3,7 @@ require 'capistrano/setup'
 
 # Includes default deployment tasks
 require 'capistrano/deploy'
+require 'capistrano/delayed-job'
 
 # Includes tasks from other gems included in your Gemfile
 #
