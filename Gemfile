@@ -12,6 +12,7 @@ gem 'dotenv-rails'
 gem 'mongoid', git: 'https://github.com/mongoid/mongoid.git'
 gem 'bson_ext'
 gem 'foreman'
+gem "sentry-raven", :git => "https://github.com/getsentry/raven-ruby.git"
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
