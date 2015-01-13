@@ -5,6 +5,7 @@
 # used to set extended properties on the server.
 
 server '128.199.59.122', user: 'deploy', roles: %w{web app}
+set :rails_env, 'production'
 
 
 # Custom SSH Options

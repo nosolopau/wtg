@@ -7,7 +7,6 @@ set :user, 'deploy'
 
 set :deploy_to, "/home/#{fetch(:user)}/public_html/#{fetch(:application)}_#{fetch(:stage)}"
 set :deploy_via, 'remote_cache'
-set :rails_env, 'production'
 
 set :linked_dirs, %w{log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
 set :linked_files, %w{.env}
@@ -18,7 +17,7 @@ set :unicorn_pid, "#{shared_path}/tmp/pids/unicorn.pid"
 namespace :deploy do
   task :start do
     on roles(:app), in: :sequence, wait: 5 do
-      execute "cd #{release_path} && #{fetch(:unicorn_binary)} -c #{fetch(:unicorn_config)} -E production -D"
+      execute "cd #{release_path} && #{fetch(:unicorn_binary)} -c #{fetch(:unicorn_config)} -E #{fetch(:stage)} -D"
     end
   end
 
