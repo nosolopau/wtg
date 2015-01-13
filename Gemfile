@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.1.0'
+gem 'rails', '4.2.0'
 
 gem 'capistrano', '~> 3.2.0'
 gem 'capistrano-bundler', '~> 1.1.2'
@@ -37,7 +37,7 @@ gem 'spring',        group: :development
 gem 'gems'
 gem 'gemnasium-parser'
 gem 'devise', '>= 3.2.4'
-gem 'pretends_like_state_machine', '~> 0.0.1'
+gem 'pretends_like_state_machine', '~> 0.0.3'
 gem 'delayed_job_mongoid', github: 'nosolopau/delayed_job_mongoid'
 gem 'daemons'
 
