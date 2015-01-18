@@ -2,7 +2,6 @@
 ## What the gem!?
 
 [![Code Climate](https://codeclimate.com/github/nosolopau/wtg/badges/gpa.svg)](https://codeclimate.com/github/nosolopau/wtg)
-[![Dependency Status](https://gemnasium.com/nosolopau/wtg.svg)](https://gemnasium.com/nosolopau/wtg)
 
 **WTG?** is a dependencies analyzer for any application with a Gemfile :). Try it in [wtg.nosolopau.com](http://wtg.nosolopau.com)!
 
