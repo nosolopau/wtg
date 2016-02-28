@@ -2,7 +2,7 @@
 APP_PATH = File.expand_path('../..',Dir.pwd)
 APP_NAME = File.basename(APP_PATH)
 USER = 'deploy'
-WORKER_PROCESESS = 4
+WORKER_PROCESESS = 2
 
 # Sample verbose configuration file for Unicorn (not Rack)
 #
