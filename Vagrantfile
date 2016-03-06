@@ -69,7 +69,7 @@ Vagrant.configure(2) do |config|
     sudo apt-get update && sudo apt-get -y dist-upgrade
     sudo add-apt-repository -y ppa:chris-lea/node.js
     sudo apt-get install -y git-core curl zlib1g-dev build-essential libssl-dev libreadline-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt1-dev libcurl4-openssl-dev python-software-properties libffi-dev nodejs
-    sudo apt-get install -y libtool libyaml-dev
+    sudo apt-get install -y libtool libyaml-dev mongodb
     cd
     git clone git://github.com/sstephenson/rbenv.git /usr/local/rbenv
     echo '# rbenv setup' > /etc/profile.d/rbenv.sh
