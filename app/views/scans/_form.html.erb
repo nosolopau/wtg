@@ -1,3 +1,12 @@
+<% if @scan.errors.any? %>
+  <p><%= pluralize(@scan.errors.count, 'error') %> prevented the form from being saved:</p>
+  <ul>
+    <% @scan.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
+
 <%= form_for @scan, html: { class: 'form-horizontal', role: 'form' } do |f| %>
   <div class="form-group">
     <%= f.label :gemfile, class: 'col-sm-2 control-label' %>
@@ -8,8 +17,8 @@
 
   <div class="form-group">
     <div class="col-sm-offset-2 col-sm-10">
-      <%= f.submit 'Scan!', :class => 'btn btn-primary' %>
-      <%= link_to 'Cancel', root_path, :class => 'btn' %>
+      <%= f.submit 'Scan!', class: 'btn btn-primary' %>
+      <%= link_to 'Cancel', root_path, class: 'btn' %>
     </div>
   </div>
 <% end %>

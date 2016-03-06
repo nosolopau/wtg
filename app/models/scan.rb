@@ -9,8 +9,13 @@ class Scan
   field :comments, type: String
 
   validates :gemfile, presence: true
+  validate :valid_gemfile
 
   has_many :dependencies
+
+  def valid_gemfile
+    errors.add(:gemfile, 'is invalid') unless is_valid_gemfile?
+  end
 
   def delay_process_dependencies!
     waiting!
@@ -58,5 +63,11 @@ class Scan
 
   def dependencies_from_gemfile
     Gemnasium::Parser.gemfile(gemfile).dependencies
+  end
+
+  private
+
+  def is_valid_gemfile?
+    gemfile.include? 'gem'
   end
 end

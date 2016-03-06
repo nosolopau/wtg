@@ -20,7 +20,7 @@ class ScansController < ApplicationController
       if @scan.save
         @scan.delay_process_dependencies!
 
-        format.html { redirect_to @scan, notice: 'Scan was successfully created.' }
+        format.html { redirect_to @scan, notice: 'Scan successfully created.' }
         format.json { render :show, status: :created, location: @scan }
       else
         format.html { render :new }
@@ -34,7 +34,7 @@ class ScansController < ApplicationController
     @scan.delay_process_dependencies!
 
     respond_to do |format|
-      format.html { redirect_to @scan, notice: 'Scan reprocessing was successfully started.' }
+      format.html { redirect_to @scan, notice: 'Scan reprocessing successfully started.' }
     end
   end
 
