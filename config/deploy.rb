@@ -4,6 +4,7 @@ lock '3.3.5'
 set :application, 'wtg'
 set :repo_url, 'git@github.com:nosolopau/wtg.git'
 set :user, 'deploy'
+set :whenever_identifier, ->{ "#{fetch(:application)}_#{fetch(:stage)}" }
 
 set :deploy_to, "/home/#{fetch(:user)}/public_html/#{fetch(:application)}_#{fetch(:stage)}"
 set :deploy_via, 'remote_cache'

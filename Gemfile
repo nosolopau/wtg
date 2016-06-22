@@ -13,6 +13,7 @@ gem 'mongoid', git: 'https://github.com/mongoid/mongoid.git'
 gem 'bson_ext'
 gem 'foreman'
 gem 'sentry-raven', git: 'https://github.com/getsentry/raven-ruby.git'
+gem 'whenever', require: false
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0.1'
