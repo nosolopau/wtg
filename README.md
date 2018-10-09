@@ -3,7 +3,7 @@
 
 [![Code Climate](https://codeclimate.com/github/nosolopau/wtg/badges/gpa.svg)](https://codeclimate.com/github/nosolopau/wtg)
 
-**WTG?** is a dependencies analyzer for any application with a Gemfile :). Try it in [wtg.nosolopau.com](http://wtg.nosolopau.com)!
+**WTG?** is a dependencies analyzer for any application with a Gemfile :).
 
 ## Setup
 
